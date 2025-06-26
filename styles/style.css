@@ -33,15 +33,7 @@ header {
   max-height: 36px;
 }
 
-/* .navigation__link-list {
-  margin-right: 150px;
-  margin-left: px;
-} */
-
 .link-list {
-  /* display: grid;
-  grid-template-columns: repeat(7, auto);
-  column-gap: 30px; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -95,7 +87,9 @@ header {
 
 .first-section {
   margin-bottom: 96px;
+  position: relative;
 }
+
 .first-section__nav-text {
   display: flex;
   flex-direction: row;
@@ -327,6 +321,12 @@ header {
   cursor: pointer;
 }
 
+.first-section__bgc {
+  position: absolute;
+  z-index: -1;
+  top: 400px;
+  width: 100%;
+}
 .footer {
   background-color: #2963A3;
   width: 100%;
@@ -508,6 +508,9 @@ input[type="email"] {
   }
   .first-section__btn {
     margin-bottom: 60px;
+  }
+  .first-section__bgc {
+    display: none;
   }
   .footer-link {
     padding-left: 4px;
