@@ -534,7 +534,7 @@ input[type="email"] {
     min-width: 111px;
   }
   .mail-box {
-    max-width: 450px;
+    max-width: 400px;
   }
   .about-us {
     padding-left: 10px;
@@ -761,7 +761,7 @@ input[type="email"] {
 
 @media (max-width: 414px) {
   .left-link-list-box {
-    margin-right: 130px;
+    margin-right: 150px;
   }
 }
 @media (max-width: 320px) {
@@ -842,5 +842,8 @@ input[type="email"] {
   }
   input[type="email"] {
     border-radius: 4px;
+  }
+  .bottom-box__text:first-of-type {
+    margin-top: 20px;
   }
 }
