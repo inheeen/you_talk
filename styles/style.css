@@ -12,6 +12,8 @@ body {
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 header {
@@ -19,13 +21,12 @@ header {
 }
 
 .header-container {
-  width: 100%;
   margin-top: 8px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 0px 10px;
+  padding: 8px 15px 10px;
   color: black;
 }
 
@@ -44,6 +45,7 @@ header {
 
 .link-list__arrow-down {
   max-width: 14px;
+  margin-left: 8px;
 }
 
 .link-list__item {
@@ -158,6 +160,14 @@ header {
   cursor: pointer;
 }
 
+.bnt-box__link:active {
+  border: 2px solid #16C8BB;
+}
+
+.active-btn {
+  border: 2px solid #16C8BB;
+}
+
 .btn-box__smile {
   width: 18px;
   height: 18px;
@@ -173,6 +183,7 @@ header {
   "third-card third-card fourth-card fourth-card fifth-card fifth-card"
   "sixth-card sixth-card seventh-card seventh-card eightht-card eightht-card";
   row-gap: 20px;
+  column-gap: 24px;
   margin-bottom: 49px;
 }
 
@@ -481,6 +492,9 @@ input[type="email"] {
   .first-section__nav-text {
     margin-bottom: 43px;
   }
+  .link-list__arrow-down {
+    margin-left: 4px;
+  }
   .first-section__cards-box {
     row-gap: 19px;
     margin-bottom: 25px;
@@ -532,7 +546,7 @@ input[type="email"] {
     padding-top: 17px;
   }
   .content-container {
-    max-width: 728px;
+    max-width: 100%;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -560,6 +574,7 @@ input[type="email"] {
     margin-bottom: 40px;
   }
   .first-section__cards-box {
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-areas: 
@@ -568,17 +583,20 @@ input[type="email"] {
     "third-card fourth-card"
     "fifth-card sixth-card"
     "seventh-card eightht-card";
+    column-gap: 8px;
     row-gap: 18px;
     margin-bottom: 28px;
   }
   .bigger-card {
-    max-width: 100%;
+    max-width: 900px;
   }
   .smaller-card {
+    max-width: 100%;
+    min-width: 300px;
     justify-self: center;
-    max-width: 352px;
   }
   .card-img {
+    max-width: 100%;
     min-height: 404px;
   }
   .card-description {
@@ -610,9 +628,6 @@ input[type="email"] {
     padding-left: 0px;
     margin-bottom: 18px;
   }
-  .mail-box {
-    max-width: 450px;
-  }
   .email-form {
     max-width: 384px;
   }
@@ -621,6 +636,24 @@ input[type="email"] {
   }
   .bottom-box {
     padding-bottom: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .first-section {
+    margin-bottom: 52px;
+  }
+  .link-list-box {
+    margin-right: 30px;
+    margin-bottom: 8px;
+  }
+  .top-text {
+    min-width: 331px;
+  }
+  .last-link-list-box {
+    margin-right: 20px;
+  }
+  .first-section__btn {
+    margin-bottom: 0px;
   }
 }
 
@@ -700,22 +733,20 @@ input[type="email"] {
     display: none;
   }
   .link-list-box {
-    margin-right: 152px;
-  }
-  .last-link-list-box {
-    margin-right: 0px;
+    margin-right: 10px;
   }
   .footer-link {
     margin-bottom: 16px;
   }
   .mail-box {
-    max-width: 100%;
+    max-width: 400px;
   }
   .email-form {
     margin-bottom: 12px;
   }
   .footer-text {
     margin-bottom: 32px;
+    max-width: 468px;
   }
   .about-us__logo-box {
     margin-bottom: 20px;
@@ -728,6 +759,11 @@ input[type="email"] {
   }
 }
 
+@media (max-width: 414px) {
+  .left-link-list-box {
+    margin-right: 130px;
+  }
+}
 @media (max-width: 320px) {
   .content-container {
     max-width: 288px;
@@ -749,15 +785,35 @@ input[type="email"] {
   .first-section__btn-box {
     margin-bottom: 24px;
   }
+  .first-section__cards-box {
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "first-card"
+    "second-card"
+    "third-card"
+    "fourth-card";
+  }
   .card {
     max-width: 288px;
     margin-bottom: 16px;
   }
+  .smaller-card {
+    min-width: 0px;
+  }
   .card-title {
     max-width: 256px;
   }
+  .top-text {
+    max-width: 256px;
+    min-width: 0px;
+  }
   .card-text {
+    max-width: 256px;
     margin-bottom: 10px;
+  }
+  .small-card-title {
+    min-width: 0px;
+    max-width: 256px;
   }
   .card-data {
     font-size: 12px;
@@ -765,8 +821,11 @@ input[type="email"] {
   .first-section__btn{
     margin-bottom: 60px;
   }
+  .footer__content-container {
+    margin-top: 10px;
+  }
   .link-list-box {
-    margin-right: 65px;
+    margin-right: 51px;
     margin-bottom: 12px;
   }
   .last-link-list-box {
@@ -777,5 +836,11 @@ input[type="email"] {
   }
   .mail-box {
     margin-right: 0px;
+  }
+  .footer-submit-btn {
+    display: none;
+  }
+  input[type="email"] {
+    border-radius: 4px;
   }
 }
