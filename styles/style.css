@@ -206,6 +206,7 @@ header {
 
 .smaller-card {
   max-width: 384px;
+  height: 475px;
 }
 .card-img {
   background-position: bottom;
@@ -278,11 +279,30 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 240px;
+  max-height: 240px;
 }
 
+.big-card-description {
+  height: 240px;
+}
 .small-card {
   min-height: 216px;
+}
+
+.small-card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;   /* Количество строк до обрезания */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.small-card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* Количество строк до обрезания */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .not-main-text {
@@ -295,14 +315,17 @@ header {
 .card-author {
   color: #494949;
   margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;   /* Количество строк до обрезания */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-text {
   font-size: 14px;
   color: #333333;
   line-height: 20px;
-  font-weight: 400;
-  margin-bottom: 14px;
   cursor: pointer;
 }
 
@@ -379,7 +402,7 @@ header {
 }
 
 .mail-box {
-  max-width: 458px;
+  max-width: 486px;
 }
 
 .footer-title {
@@ -398,7 +421,9 @@ header {
 }
 
 .form-group {
+  position: relative;
   display: flex;
+  width: 344px;
   height: 48px;
   border-radius: 4px;
 }
@@ -414,12 +439,15 @@ input[type="email"] {
 }
 
 .footer-submit-btn {
+  position: absolute;
+  right: -30px;
+  width: 64px;
+  height: 48px;
   background: #16C8BB;
   color: white;
   border: none;
   padding: 0 24px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   transition: background 0.3s;
@@ -449,6 +477,11 @@ input[type="email"] {
   max-width: 100px;
   min-height: 50px;
   margin-right: 8px;
+}
+
+.input-img {
+  width: 19.46px;
+  height: 21.31px;
 }
 
 .logo-box__text {
@@ -483,6 +516,9 @@ input[type="email"] {
 }
 
 @media (max-width: 1024px){
+  *, *::before, *::after {
+    box-sizing:content-box;
+  } 
   .content-container {
     max-width: 960px;
   }
@@ -495,24 +531,38 @@ input[type="email"] {
   .link-list__arrow-down {
     margin-left: 4px;
   }
+  .first-section__title { 
+    margin-bottom: 28px;
+  }
+  .first-section__btn-box {
+    margin-bottom: 20px;
+  }
   .first-section__cards-box {
     row-gap: 19px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
+  }
+  .card-img {
+    min-height: 250px;
   }
   .small-card-img {
-    height: 206px;
+    min-height: 206px;
+  }
+  .big-card-description {
+    min-height: 220px;
   }
   .bigger-card {
     max-width: 468px;
+    min-height: 499px;
   }
   .smaller-card {
     max-width: 304px;
+    max-height: 458px;
   }
   br {
     display: none;
   }
   .small-card {
-    min-height: 253px;
+    max-height: 253px;
   }
   .small-card-title {
     width: 272px;
@@ -521,7 +571,8 @@ input[type="email"] {
     width: 272px;
   }
   .first-section__btn {
-    margin-bottom: 60px;
+    margin: 0 auto;
+    margin-bottom: 30px;
   }
   .first-section__bgc {
     display: none;
@@ -534,14 +585,26 @@ input[type="email"] {
     min-width: 111px;
   }
   .mail-box {
-    max-width: 400px;
+    max-width: 450px;
   }
   .about-us {
     padding-left: 10px;
   }
+  .footer-text {
+    max-width: 450px;
+  }
+  .form-group {
+    width: 384px;
+  }
 }
 
 @media (max-width: 991px) {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  } 
+  body {
+    margin: 0 auto;
+  }
   header {
     padding-top: 17px;
   }
@@ -595,18 +658,16 @@ input[type="email"] {
     min-width: 300px;
     justify-self: center;
   }
-  .card-img {
-    max-width: 100%;
-    min-height: 404px;
-  }
+
   .card-description {
     min-height: 196px;
   }
   .small-card {
     min-height: 241px;
+    max-width: 500px;
   }
-  .small-card-img {
-    min-height: 206px;
+  .smaller-card {
+    max-width: 352px;
   }
   .small-card-title {
     min-width: 320px;
@@ -655,6 +716,9 @@ input[type="email"] {
   .first-section__btn {
     margin-bottom: 0px;
   }
+  .first-section__cards-box {
+    column-gap: 24px;
+  }
 }
 
 @media (max-width: 728px) {
@@ -702,6 +766,9 @@ input[type="email"] {
   .card {
     max-width: 100%;
     max-height: 466px;
+  }
+  .small-card {
+    max-width: 100%;
   }
   .smaller-card {
     justify-self: normal;
@@ -763,6 +830,24 @@ input[type="email"] {
   .left-link-list-box {
     margin-right: 150px;
   }
+  .footer-submit-btn {
+    right: -2px;
+  }
+  .card {
+    width: 100%;
+  }
+  .mail-box {
+    max-width: 100%
+  }
+  .form-group {
+    width: 100%;
+  }
+  .card-description {
+    max-width: 100%;
+  }
+  .card-img {
+    max-width: 100%;
+  }
 }
 @media (max-width: 320px) {
   .content-container {
@@ -771,6 +856,10 @@ input[type="email"] {
   }
   header {
     padding-top: 2px;
+  }
+  .header-container {
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
   .header-logo__img {
     padding-right: 208px;
@@ -785,17 +874,10 @@ input[type="email"] {
   .first-section__btn-box {
     margin-bottom: 24px;
   }
-  .first-section__cards-box {
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas: 
-    "first-card"
-    "second-card"
-    "third-card"
-    "fourth-card";
-  }
   .card {
+    align-self: center;
     max-width: 288px;
-    margin-bottom: 16px;
+    min-height: 499px;
   }
   .smaller-card {
     min-width: 0px;
@@ -840,10 +922,19 @@ input[type="email"] {
   .footer-submit-btn {
     display: none;
   }
+  .mail-box {
+    max-width: 288px;
+  }
+  .form-group {
+    width: 100%
+  }
   input[type="email"] {
     border-radius: 4px;
   }
   .bottom-box__text:first-of-type {
     margin-top: 20px;
+  }
+  .card-description {
+    min-height: 274px;
   }
 }
